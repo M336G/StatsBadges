@@ -56,6 +56,12 @@ class $modify(MyProfilePage, ProfilePage) {
 
     void addProfileBadge(std::string type) {
         auto [sprite, priority, callback] = m_fields->m_badges.at(type);
+        auto id = fmt::format("{}-badge:{}"_spr, type, priority);
+
+        // If it already exists don't add it again
+        if (static_cast<CCMenuItemSpriteExtra *>(
+            m_fields->m_usernameMenu->getChildByIDRecursive(id)))
+            return;
 
         auto *badge = CCMenuItemSpriteExtra::create(
             cocos2d::CCSprite::createWithSpriteFrameName(sprite),
@@ -63,7 +69,7 @@ class $modify(MyProfilePage, ProfilePage) {
             callback
         );
 
-        badge->setID(fmt::format("{}-badge:{}"_spr, type, priority));
+        badge->setID(id);
         m_fields->m_usernameMenu->addChild(badge);
     };
 
