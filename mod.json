@@ -1,5 +1,5 @@
 {
-	"geode": "5.0.1",
+	"geode": "5.3.0",
 	"gd": {
 		"win": "2.2081",
 		"android": "2.2081",
@@ -8,7 +8,7 @@
 	},
 	"id": "m336.stats-badges",
 	"name": "Stats Badges",
-	"version": "v1.0.1",
+	"version": "v1.1.0",
 	"developer": "M336",
 	"description": "Gives cool stats badges to players' profiles!",
 	"tags": [
@@ -25,12 +25,5 @@
 	"dependencies": {
 		"geode.node-ids": ">=v1.23.0",
 		"jouca.badgesapi": ">=1.4.1"
-	},
-    "resources": {
-        "spritesheets": {
-            "BadgesSheet": [
-                "resources/BadgesSheet/*.png"
-            ]
-        }
-    }
+	}
 }
