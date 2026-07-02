@@ -188,7 +188,7 @@ $on_mod(Loaded) {
 
             CCSprite* badgeSpr = CCSprite::createWithSpriteFrameName("GJ_bigStar_noShadow_001.png");
 
-            alpha::badgify::showBadge(badgeFromAlpha, badgeSpr);
+            alpha::badgify::showBadge(badge, badgeSpr);
         }
     );
     alpha::badgify::registerBadge(
@@ -200,7 +200,7 @@ $on_mod(Loaded) {
 
             CCSprite* badgeSpr = CCSprite::createWithSpriteFrameName("GJ_bigMoon_noShadow_001.png");
 
-            alpha::badgify::showBadge(badgeFromAlpha, badgeSpr);
+            alpha::badgify::showBadge(badge, badgeSpr);
         }
     );
     alpha::badgify::registerBadge(
@@ -212,7 +212,7 @@ $on_mod(Loaded) {
 
             CCSprite* badgeSpr = CCSprite::createWithSpriteFrameName("GJ_coinsIcon_001.png");
 
-            alpha::badgify::showBadge(badgeFromAlpha, badgeSpr);
+            alpha::badgify::showBadge(badge, badgeSpr);
         }
     );
     alpha::badgify::registerBadge(
@@ -224,7 +224,7 @@ $on_mod(Loaded) {
 
             CCSprite* badgeSpr = CCSprite::createWithSpriteFrameName("GJ_coinsIcon2_001.png");
 
-            alpha::badgify::showBadge(badgeFromAlpha, badgeSpr);
+            alpha::badgify::showBadge(badge, badgeSpr);
         }
     );
     alpha::badgify::registerBadge(
@@ -236,7 +236,7 @@ $on_mod(Loaded) {
 
             CCSprite* badgeSpr = CCSprite::createWithSpriteFrameName("diffIcon_10_btn_001.png");
 
-            alpha::badgify::showBadge(badgeFromAlpha, badgeSpr);
+            alpha::badgify::showBadge(badge, badgeSpr);
         }
     );
     alpha::badgify::registerBadge(
@@ -249,7 +249,7 @@ $on_mod(Loaded) {
 
             CCSprite* badgeSpr = CCSprite::createWithSpriteFrameName("diffIcon_06_btn_001.png");
 
-            alpha::badgify::showBadge(badgeFromAlpha, badgeSpr);
+            alpha::badgify::showBadge(badge, badgeSpr);
         }
     );
     alpha::badgify::registerBadge(
@@ -262,7 +262,7 @@ $on_mod(Loaded) {
 
             CCSprite* badgeSpr = CCSprite::createWithSpriteFrameName("diffIcon_07_btn_001.png");
 
-            alpha::badgify::showBadge(badgeFromAlpha, badgeSpr);
+            alpha::badgify::showBadge(badge, badgeSpr);
         }
     );
     alpha::badgify::registerBadge(
@@ -274,7 +274,7 @@ $on_mod(Loaded) {
 
             CCSprite* badgeSpr = CCSprite::createWithSpriteFrameName("GJ_hammerIcon_001.png");
 
-            alpha::badgify::showBadge(badgeFromAlpha, badgeSpr);
+            alpha::badgify::showBadge(badge, badgeSpr);
         }
     );
 }
