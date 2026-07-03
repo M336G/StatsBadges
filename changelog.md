@@ -1,3 +1,6 @@
+# 1.2.1
+- Fixed some logic issues with the badge requirements
+
 # 1.2.0
 - Ported to [Badgify](https://geode-sdk.org/mods/alphalaneous.badgify) for displaying badges
 - Removed the dependency for Badges API

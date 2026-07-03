@@ -16,6 +16,7 @@ $on_mod(Loaded) {
             );
         }
     );
+
     alpha::badgify::registerBadge(
         "moon-collector"_spr,
         "Moon collector!",
@@ -29,6 +30,7 @@ $on_mod(Loaded) {
             );
         }
     );
+
     alpha::badgify::registerBadge(
         "secret-coin-collector"_spr,
         "Secret coin collector!",
@@ -42,6 +44,7 @@ $on_mod(Loaded) {
             );
         }
     );
+
     alpha::badgify::registerBadge(
         "user-coin-collector"_spr,
         "User coin collector!",
@@ -55,10 +58,11 @@ $on_mod(Loaded) {
             );
         }
     );
+
     alpha::badgify::registerBadge(
         "demon-slayer"_spr,
         "Demon slayer!",
-        "This player has completed over <cr>100 demon levels</c>!",    
+        "This player has completed over <cr>100 demon levels</c>!",
         [](alpha::badgify::Badge const& badge) {
             if (badge.user.data()->m_demons < 100) return;
 
@@ -68,6 +72,7 @@ $on_mod(Loaded) {
             );
         }
     );
+
     alpha::badgify::registerBadge(
         "demon-master"_spr,
         "Demon master!",
@@ -82,13 +87,14 @@ $on_mod(Loaded) {
             );
         }
     );
+
     alpha::badgify::registerBadge(
         "demon-chaser"_spr,
         "Demon chaser!",
         "This player has completed over <cr>25 demon levels</c>!",
         [](alpha::badgify::Badge const& badge) {
             int const demons = badge.user.data()->m_demons;
-            if (demons < 25 || demons > 49) return;
+            if (demons < 25 || demons > 50) return;
 
             alpha::badgify::showBadge(
                 badge,
@@ -96,12 +102,13 @@ $on_mod(Loaded) {
             );
         }
     );
+
     alpha::badgify::registerBadge(
         "creator"_spr,
         "Creator badge!",
         "This player has been awarded with <cb>creator points</c> by <cb>RobTop</c>!",
         [](alpha::badgify::Badge const& badge) {
-            if (badge.user.data()->m_creatorPoints > 0) return;
+            if (badge.user.data()->m_creatorPoints == 0) return;
 
             alpha::badgify::showBadge(
                 badge,
