@@ -1,3 +1,9 @@
+# 1.3.0
+- Made the mod independent of any other mod due to Badgify's recent deprecation;
+    - Using Badgify will still work as before
+    - Using Badges API will also still work as it did before the Badgify port
+    - Not using any of the above will only display one badge per profile
+
 # 1.2.1
 - Fixed some logic issues with the badge requirements
 

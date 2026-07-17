@@ -12,5 +12,7 @@ Each badge's requirements will be displayed below. Note that the demon badges ar
 - **<cr>Demon master</c>:** beaten at least 50 demon levels.
 - **<cr>Demon chaser</c>:** beaten at least 25 demon levels.
 
+**Use [Badges API](https://geode-sdk.org/mods/jouca.badgesapi) or [Badgify](https://geode-sdk.org/mods/alphalaneous.badgify) to show more than one badge per profile!**
+
 ## Want to help?
 Feel free to open a [Pull Request](https://github.com/M336G/StatsBadges/pulls) on GitHub!
