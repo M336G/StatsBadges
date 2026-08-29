@@ -1,19 +1,19 @@
-#include "ModHelper.hpp"
+#include "../ModHelper.hpp"
 
 using namespace geode::prelude;
 
-#include <Geode/modify/ProfilePage.hpp>
-class $modify(StatsBadgesProfilePage, ProfilePage) {
+#include <Geode/modify/CommentCell.hpp>
+class $modify(StatsBadgesCommentCell, CommentCell) {
     struct Fields {
         std::unordered_map<std::string_view, SEL_MenuHandler const> const m_callbacks = {
-            { "star-collector", menu_selector(StatsBadgesProfilePage::onStarCollectorBadge) },
-            { "moon-collector", menu_selector(StatsBadgesProfilePage::onMoonCollectorBadge) },
-            { "secret-coin-collector", menu_selector(StatsBadgesProfilePage::onGoldCoinCollectorBadge) },
-            { "user-coin-collector", menu_selector(StatsBadgesProfilePage::onSilverCoinCollectorBadge) },
-            { "demon-slayer", menu_selector(StatsBadgesProfilePage::onDemonSlayerBadge) },
-            { "demon-master", menu_selector(StatsBadgesProfilePage::onDemonMasterBadge) },
-            { "demon-chaser", menu_selector(StatsBadgesProfilePage::onDemonChaserBadge) },
-            { "creator", menu_selector(StatsBadgesProfilePage::onCreatorBadge) }
+            { "star-collector", menu_selector(StatsBadgesCommentCell::onStarCollectorBadge) },
+            { "moon-collector", menu_selector(StatsBadgesCommentCell::onMoonCollectorBadge) },
+            { "secret-coin-collector", menu_selector(StatsBadgesCommentCell::onGoldCoinCollectorBadge) },
+            { "user-coin-collector", menu_selector(StatsBadgesCommentCell::onSilverCoinCollectorBadge) },
+            { "demon-slayer", menu_selector(StatsBadgesCommentCell::onDemonSlayerBadge) },
+            { "demon-master", menu_selector(StatsBadgesCommentCell::onDemonMasterBadge) },
+            { "demon-chaser", menu_selector(StatsBadgesCommentCell::onDemonChaserBadge) },
+            { "creator", menu_selector(StatsBadgesCommentCell::onCreatorBadge) }
         };
         int m_badgesAdded = 0;
         CCMenu *m_usernameMenu;
@@ -43,10 +43,10 @@ class $modify(StatsBadgesProfilePage, ProfilePage) {
         m_fields->m_badgesAdded++;
     }
 
-    void loadPageFromUserInfo(GJUserScore *score) {
-        ProfilePage::loadPageFromUserInfo(score);
+    void loadFromComment(GJComment *comment) {
+        CommentCell::loadFromComment(comment);
 
-        if (ModHelper::isBadgifyLoaded())
+        if (ModHelper::isBadgifiedLoaded() || ModHelper::isBadgifyLoaded())
             return;
 
         // Get the menu to add the badges to
@@ -59,16 +59,16 @@ class $modify(StatsBadgesProfilePage, ProfilePage) {
             m_fields->m_badgesAdded++;
         }
 
-        if (score->m_stars >= 3000) addProfileBadge("star-collector");
-        if (score->m_moons >= 3000) addProfileBadge("moon-collector");
-        if (score->m_secretCoins >= 100) addProfileBadge("secret-coin-collector");
-        if (score->m_userCoins >= 1000) addProfileBadge("user-coin-collector");
+        if (comment->m_userScore->m_stars >= 3000) addProfileBadge("star-collector");
+        if (comment->m_userScore->m_moons >= 3000) addProfileBadge("moon-collector");
+        if (comment->m_userScore->m_secretCoins >= 100) addProfileBadge("secret-coin-collector");
+        if (comment->m_userScore->m_userCoins >= 1000) addProfileBadge("user-coin-collector");
 
-        if (score->m_demons >= 100) addProfileBadge("demon-slayer");
-        else if (score->m_demons >= 50) addProfileBadge("demon-master");
-        else if (score->m_demons >= 25) addProfileBadge("demon-chaser");
+        if (comment->m_userScore->m_demons >= 100) addProfileBadge("demon-slayer");
+        else if (comment->m_userScore->m_demons >= 50) addProfileBadge("demon-master");
+        else if (comment->m_userScore->m_demons >= 25) addProfileBadge("demon-chaser");
 
-        if (score->m_creatorPoints) addProfileBadge("creator");
+        if (comment->m_userScore->m_creatorPoints) addProfileBadge("creator");
 
         m_fields->m_usernameMenu->updateLayout();
     };

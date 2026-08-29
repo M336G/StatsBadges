@@ -13,5 +13,6 @@ public:
     static const std::unordered_map<std::string, BadgeInfo> badges;
 
     static bool isBadgifyLoaded();
+    static bool isBadgifiedLoaded();
     static bool isBadgesApiLoaded();
 };

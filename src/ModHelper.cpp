@@ -66,6 +66,11 @@ bool ModHelper::isBadgifyLoaded() {
     return isBadgifyLoaded;
 }
 
+bool ModHelper::isBadgifiedLoaded() {
+    static bool isBadgifiedLoaded = Loader::get()->isModLoaded("dasshu.badgified");
+    return isBadgifiedLoaded;
+}
+
 bool ModHelper::isBadgesApiLoaded() {
     static bool isBadgesApiLoaded = Loader::get()->isModLoaded("jouca.badgesapi");
     return isBadgesApiLoaded;
