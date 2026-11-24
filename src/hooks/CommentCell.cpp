@@ -46,7 +46,7 @@ class $modify(StatsBadgesCommentCell, CommentCell) {
     void loadFromComment(GJComment *comment) {
         CommentCell::loadFromComment(comment);
 
-        if (ModHelper::isBadgifiedLoaded() || ModHelper::isBadgifyLoaded())
+        if (ModHelper::isBadgifiedLoaded())
             return;
 
         // Get the menu to add the badges to

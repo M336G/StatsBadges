@@ -1,5 +1,5 @@
 #include <Geode/Geode.hpp>
-#include <dasshu.badgified/include/Badgified.hpp>
+#include <dasshu.badgified/Badgified.hpp>
 
 #include "ModHelper.hpp"
 
@@ -7,9 +7,6 @@ using namespace geode::prelude;
 using namespace dasshu::badgified;
 
 $on_mod(Loaded) {
-    if (ModHelper::isBadgifiedLoaded() && ModHelper::isBadgifyLoaded())
-        return;
-
     for (auto const& [id, info] : ModHelper::badges) {
         registerBadge(
             fmt::format("{}"_spr, id),

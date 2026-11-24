@@ -61,11 +61,6 @@ std::unordered_map<std::string, ModHelper::BadgeInfo> const ModHelper::badges = 
     } }
 };
 
-bool ModHelper::isBadgifyLoaded() {
-    static bool isBadgifyLoaded = Loader::get()->isModLoaded("alphalaneous.badgify");
-    return isBadgifyLoaded;
-}
-
 bool ModHelper::isBadgifiedLoaded() {
     static bool isBadgifiedLoaded = Loader::get()->isModLoaded("dasshu.badgified");
     return isBadgifiedLoaded;

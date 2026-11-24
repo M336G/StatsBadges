@@ -46,7 +46,7 @@ class $modify(StatsBadgesProfilePage, ProfilePage) {
     void loadPageFromUserInfo(GJUserScore *score) {
         ProfilePage::loadPageFromUserInfo(score);
 
-        if (ModHelper::isBadgifiedLoaded() || ModHelper::isBadgifyLoaded())
+        if (ModHelper::isBadgifiedLoaded())
             return;
 
         // Get the menu to add the badges to
